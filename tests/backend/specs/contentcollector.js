@@ -11,8 +11,8 @@
 
 const AttributePool = require('ep_etherpad-lite/static/js/AttributePool');
 const assert = require('assert').strict;
-const cheerio = require('ep_etherpad-lite/node_modules/cheerio');
 const contentcollector = require('ep_etherpad-lite/static/js/contentcollector');
+const jsdom = require('ep_etherpad-lite/node_modules/jsdom');
 
 const tests = {
   nestedLi: {
@@ -285,8 +285,7 @@ describe(__filename, function () {
       }
 
       it(testObj.description, async function () {
-        const $ = cheerio.load(testObj.html); // Load HTML into Cheerio
-        const doc = $('body')[0]; // Creates a dom-like representation of HTML
+        const doc = (new jsdom.JSDOM(testObj.html)).window.document.querySelector('body');
         // Create an empty attribute pool
         const apool = new AttributePool();
         // Convert a dom tree into a list of lines and attribute liens
