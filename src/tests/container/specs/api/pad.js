@@ -5,7 +5,7 @@
  * TODO: unify those two files, and merge in a single one.
  */
 
-const supertest = require(`${__dirname}/../../../../src/node_modules/supertest`);
+const supertest = require(`${__dirname}/../../../../node_modules/supertest`);
 const settings = require(`${__dirname}/../../loadSettings`).loadSettings();
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 
