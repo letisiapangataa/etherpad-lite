@@ -21,7 +21,7 @@ if (process.argv.length !== 3) throw new Error('Use: node deletePad.js $PADID');
 const padId = process.argv[2];
 
 // get the API Key
-const filePath = path.join(__dirname, '../APIKEY.txt');
+const filePath = path.join(__dirname, '../../APIKEY.txt');
 const apikey = fs.readFileSync(filePath, {encoding: 'utf-8'});
 
 (async () => {
