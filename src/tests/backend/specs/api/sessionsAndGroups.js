@@ -1,7 +1,7 @@
 const assert = require('assert').strict;
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../../src/node_modules/supertest`);
-const settings = require(`${__dirname}/../../../../src/node/utils/Settings`);
+const supertest = require(`${__dirname}/../../../src/node_modules/supertest`);
+const settings = require(`${__dirname}/../../../src/node/utils/Settings`);
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 
 const apiKey = common.apiKey;
@@ -24,8 +24,8 @@ describe(__filename, function () {
   });
 
   // BEGIN GROUP AND AUTHOR TESTS
-  // ///////////////////////////////////
-  // ///////////////////////////////////
+  /../../../../../../../../..//
+  /../../../../../../../../..//
 
   /* Tests performed
   -> createGroup() -- should return a groupID
@@ -344,8 +344,8 @@ describe(__filename, function () {
   });
 
   // NOT SURE HOW TO POPULAT THIS /-_-\
-  // /////////////////////////////////////
-  // /////////////////////////////////////
+  /../../../../../../../../..////
+  /../../../../../../../../..////
 
   describe('API: Misc', function () {
     it('listPadsOfAuthor', async function () {

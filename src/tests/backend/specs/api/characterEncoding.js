@@ -7,9 +7,9 @@
  */
 
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../../src/node_modules/supertest`);
+const supertest = require(`${__dirname}/../../../src/node_modules/supertest`);
 const fs = require('fs');
-const settings = require(`${__dirname}/../../../../src/node/utils/Settings`);
+const settings = require(`${__dirname}/../../../src/node/utils/Settings`);
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 
 const apiKey = common.apiKey;
