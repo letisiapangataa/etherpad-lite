@@ -1,4 +1,4 @@
-function m(mod) { return `${__dirname}/../../../../src/${mod}`; }
+function m(mod) { return `${__dirname}/../../../../${mod}`; }
 
 const common = require('../../common');
 const settings = require(m('node/utils/Settings'));

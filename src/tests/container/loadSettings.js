@@ -12,11 +12,11 @@
  *          back to a default)
  */
 
-const jsonminify = require(`${__dirname}/../../src/node_modules/jsonminify`);
+const jsonminify = require(`${__dirname}/../../node_modules/jsonminify`);
 const fs = require('fs');
 
 function loadSettings() {
-  let settingsStr = fs.readFileSync(`${__dirname}/../../settings.json.docker`).toString();
+  let settingsStr = fs.readFileSync(`${__dirname}/../../../settings.json.docker`).toString();
   // try to parse the settings
   try {
     if (settingsStr) {

@@ -1,4 +1,4 @@
-function m(mod) { return `${__dirname}/../../../src/${mod}`; }
+function m(mod) { return `${__dirname}/../../../${mod}`; }
 
 const assert = require('assert').strict;
 const promises = require(m('node/utils/promises'));

@@ -5,7 +5,7 @@
  */
 
 const common = require('../common');
-const settings = require('../../../src/node/utils/Settings');
+const settings = require('../../../node/utils/Settings');
 const assert = require('assert').strict;
 const url = require('url');
 const queryString = require('querystring');
