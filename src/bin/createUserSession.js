@@ -18,7 +18,7 @@ const supertest = require('ep_etherpad-lite/node_modules/supertest');
 (async () => {
   const api = supertest(`http://${settings.ip}:${settings.port}`);
 
-  const filePath = path.join(__dirname, '../APIKEY.txt');
+  const filePath = path.join(__dirname, '../../APIKEY.txt');
   const apikey = fs.readFileSync(filePath, {encoding: 'utf-8'});
 
   let res;
