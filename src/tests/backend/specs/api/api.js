@@ -7,12 +7,11 @@
  */
 
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../../node_modules/supertest`);
-const settings = require(`${__dirname}/../../../../node/utils/Settings`);
+const settings = require('../../../../node/utils/Settings');
+const supertest = require('supertest');
+const validateOpenAPI = require('openapi-schema-validation').validate;
+
 const api = supertest(`http://${settings.ip}:${settings.port}`);
-
-const validateOpenAPI = require(`${__dirname}/../../../../node_modules/openapi-schema-validation`).validate;
-
 const apiKey = common.apiKey;
 let apiVersion = 1;
 

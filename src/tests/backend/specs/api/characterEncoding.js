@@ -7,11 +7,11 @@
  */
 
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../../node_modules/supertest`);
 const fs = require('fs');
-const settings = require(`${__dirname}/../../../../node/utils/Settings`);
-const api = supertest(`http://${settings.ip}:${settings.port}`);
+const settings = require('../../../../node/utils/Settings');
+const supertest = require('supertest');
 
+const api = supertest(`http://${settings.ip}:${settings.port}`);
 const apiKey = common.apiKey;
 let apiVersion = 1;
 const testPadId = makeid();

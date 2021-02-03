@@ -4,7 +4,7 @@
 // unhandled rejection into an uncaught exception, which does cause Node.js to exit.
 process.on('unhandledRejection', (err) => { throw err; });
 
-const npm = require('ep_etherpad-lite/node_modules/npm');
+const npm = require('npm');
 const util = require('util');
 
 (async () => {
@@ -20,10 +20,10 @@ const util = require('util');
   // `node --max-old-space-size=4096 bin/migrateDirtyDBtoRealDB.js`
 
 
-  const settings = require('ep_etherpad-lite/node/utils/Settings');
-  const dirtyDb = require('ep_etherpad-lite/node_modules/dirty');
-  const ueberDB = require('ep_etherpad-lite/node_modules/ueberdb2');
-  const log4js = require('ep_etherpad-lite/node_modules/log4js');
+  const dirtyDb = require('dirty');
+  const log4js = require('log4js');
+  const settings = require('../node/utils/Settings');
+  const ueberDB = require('ueberdb2');
   const dbWrapperSettings = {
     cache: '0', // The cache slows things down when you're mostly writing.
     writeInterval: 0, // Write directly to the database, don't buffer

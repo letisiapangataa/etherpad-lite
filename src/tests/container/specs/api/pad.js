@@ -5,10 +5,10 @@
  * TODO: unify those two files, and merge in a single one.
  */
 
-const supertest = require(`${__dirname}/../../../../node_modules/supertest`);
-const settings = require(`${__dirname}/../../loadSettings`).loadSettings();
-const api = supertest(`http://${settings.ip}:${settings.port}`);
+const settings = require('../../loadSettings').loadSettings();
+const supertest = require('supertest');
 
+const api = supertest(`http://${settings.ip}:${settings.port}`);
 const apiVersion = 1;
 
 describe('Connectivity', function () {

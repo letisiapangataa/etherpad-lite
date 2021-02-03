@@ -3,10 +3,11 @@
  */
 /*
 const common = require('../../common');
-const settings = require(__dirname+'/../../../../tests/container/loadSettings.js').loadSettings();
+const froth = require('mocha-froth');
+const request = require('request');
+const settings = require('../../../container/loadSettings.js').loadSettings();
+
 const host = "http://" + settings.ip + ":" + settings.port;
-const request = require(__dirname+'/../../../../node_modules/request');
-const froth = require(__dirname+'/../../../../node_modules/mocha-froth');
 
 const apiKey = common.apiKey;
 var apiVersion = 1;

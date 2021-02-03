@@ -1,8 +1,6 @@
-function m(mod) { return `${__dirname}/../../../../${mod}`; }
-
 const common = require('../../common');
-const settings = require(m('node/utils/Settings'));
-const supertest = require(m('node_modules/supertest'));
+const settings = require('../../../../node/utils/Settings');
+const supertest = require('supertest');
 
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 const apiKey = common.apiKey;

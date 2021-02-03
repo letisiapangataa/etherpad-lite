@@ -3,10 +3,10 @@
  * Usage: node fuzzImportTest.js
  */
 const common = require('./common');
-const settings = require(`${__dirname}/loadSettings`).loadSettings();
 const host = `http://${settings.ip}:${settings.port}`;
 const request = require('request');
 const froth = require('mocha-froth');
+const settings = require('../container/loadSettings').loadSettings();
 
 const apiKey = common.apiKey;
 const apiVersion = 1;

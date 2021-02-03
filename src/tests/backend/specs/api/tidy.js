@@ -6,16 +6,16 @@ const fs = require('fs');
 const path = require('path');
 let TidyHtml;
 let Settings;
-const npm = require('ep_etherpad-lite/node_modules/npm/lib/npm.js');
-const nodeify = require('ep_etherpad-lite/node_modules/nodeify');
+const npm = require('npm/lib/npm.js');
+const nodeify = require('nodeify');
 
 describe(__filename, function () {
   describe('tidyHtml', function () {
     before(function (done) {
       npm.load({}, (err) => {
         assert.ok(!err);
-        TidyHtml = require('ep_etherpad-lite/node/utils/TidyHtml');
-        Settings = require('ep_etherpad-lite/node/utils/Settings');
+        TidyHtml = require('../../../../node/utils/TidyHtml');
+        Settings = require('../../../../node/utils/Settings');
         return done();
       });
     });

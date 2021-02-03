@@ -6,11 +6,11 @@
 
 const assert = require('assert').strict;
 const common = require('../../common');
-const superagent = require('ep_etherpad-lite/node_modules/superagent');
 const fs = require('fs');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
-const padManager = require('ep_etherpad-lite/node/db/PadManager');
-const plugins = require('ep_etherpad-lite/static/js/pluginfw/plugin_defs');
+const settings = require('../../../../node/utils/Settings');
+const superagent = require('superagent');
+const padManager = require('../../../../node/db/PadManager');
+const plugins = require('../../../../static/js/pluginfw/plugin_defs');
 
 const padText = fs.readFileSync('../tests/backend/specs/api/test.txt');
 const etherpadDoc = fs.readFileSync('../tests/backend/specs/api/test.etherpad');

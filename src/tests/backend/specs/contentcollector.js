@@ -9,10 +9,10 @@
  * If you add tests here, please also add them to importexport.js
  */
 
-const AttributePool = require('ep_etherpad-lite/static/js/AttributePool');
+const AttributePool = require('../../../static/js/AttributePool');
 const assert = require('assert').strict;
-const cheerio = require('ep_etherpad-lite/node_modules/cheerio');
-const contentcollector = require('ep_etherpad-lite/static/js/contentcollector');
+const cheerio = require('cheerio');
+const contentcollector = require('../../../static/js/contentcollector');
 
 const tests = {
   nestedLi: {

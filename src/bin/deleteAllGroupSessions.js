@@ -9,9 +9,9 @@
 // unhandled rejection into an uncaught exception, which does cause Node.js to exit.
 process.on('unhandledRejection', (err) => { throw err; });
 
-const supertest = require('ep_etherpad-lite/node_modules/supertest');
 const path = require('path');
 const fs = require('fs');
+const supertest = require('supertest');
 
 // Set a delete counter which will increment on each delete attempt
 // TODO: Check delete is successful before incrementing

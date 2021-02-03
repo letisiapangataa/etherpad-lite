@@ -5,10 +5,10 @@
  */
 
 const common = require('../common');
-const settings = require('../../../node/utils/Settings');
 const assert = require('assert').strict;
 const url = require('url');
 const queryString = require('querystring');
+const settings = require('../../../node/utils/Settings');
 
 let agent;
 

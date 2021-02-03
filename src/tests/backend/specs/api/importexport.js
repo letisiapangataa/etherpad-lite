@@ -8,7 +8,7 @@
 
 const common = require('../../common');
 const settings = require('../../../container/loadSettings.js').loadSettings();
-const supertest = require('ep_etherpad-lite/node_modules/supertest');
+const supertest = require('supertest');
 
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 const apiKey = common.apiKey;

@@ -4,8 +4,9 @@
  * Section "GLOBAL FUNCTIONS" in src/node/db/API.js
  */
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../../node_modules/supertest`);
-const settings = require(`${__dirname}/../../../../node/utils/Settings`);
+const settings = require('../../../../node/utils/Settings');
+const supertest = require('supertest');
+
 const api = supertest(`http://${settings.ip}:${settings.port}`);
 
 const apiKey = common.apiKey;

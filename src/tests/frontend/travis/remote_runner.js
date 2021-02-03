@@ -1,7 +1,7 @@
 'use strict';
 
-const wd = require('ep_etherpad-lite/node_modules/wd');
-const async = require('ep_etherpad-lite/node_modules/async');
+const async = require('async');
+const wd = require('wd');
 
 const config = {
   host: 'ondemand.saucelabs.com',

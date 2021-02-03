@@ -12,8 +12,8 @@ process.on('unhandledRejection', (err) => { throw err; });
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
-const settings = require('ep_etherpad-lite/node/utils/Settings');
-const supertest = require('ep_etherpad-lite/node_modules/supertest');
+const settings = require('../node/utils/Settings');
+const supertest = require('supertest');
 
 (async () => {
   const api = supertest(`http://${settings.ip}:${settings.port}`);

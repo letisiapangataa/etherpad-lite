@@ -1,9 +1,9 @@
 'use strict';
 
 const assert = require('assert').strict;
-const hooks = require('ep_etherpad-lite/static/js/pluginfw/hooks');
-const plugins = require('ep_etherpad-lite/static/js/pluginfw/plugin_defs');
-const sinon = require('ep_etherpad-lite/node_modules/sinon');
+const hooks = require('../../../static/js/pluginfw/hooks');
+const plugins = require('../../../static/js/pluginfw/plugin_defs');
+const sinon = require('sinon');
 
 describe(__filename, function () {
   const hookName = 'testHook';

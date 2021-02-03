@@ -10,10 +10,11 @@
 process.on('unhandledRejection', (err) => { throw err; });
 
 const settings = require('../tests/container/loadSettings').loadSettings();
-const supertest = require('ep_etherpad-lite/node_modules/supertest');
-const api = supertest(`http://${settings.ip}:${settings.port}`);
 const path = require('path');
 const fs = require('fs');
+const supertest = require('supertest');
+
+const api = supertest(`http://${settings.ip}:${settings.port}`);
 
 if (process.argv.length !== 3) throw new Error('Use: node deletePad.js $PADID');
 
