@@ -6,10 +6,10 @@
  */
 
 const common = require('../../common');
-const supertest = require(`${__dirname}/../../../src/node_modules/supertest`);
-const settings = require(`${__dirname}/../../../src/node/utils/Settings`);
+const supertest = require(`${__dirname}/../../../../src/node_modules/supertest`);
+const settings = require(`${__dirname}/../../../../src/node/utils/Settings`);
 const api = supertest(`http://${settings.ip}:${settings.port}`);
-const async = require(`${__dirname}/../../../src/node_modules/async`);
+const async = require(`${__dirname}/../../../../src/node_modules/async`);
 
 const apiKey = common.apiKey;
 let apiVersion = 1;

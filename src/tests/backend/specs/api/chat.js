@@ -1,4 +1,4 @@
-function m(mod) { return `${__dirname}/../../../src/${mod}`; }
+function m(mod) { return `${__dirname}/../../../../src/${mod}`; }
 
 const common = require('../../common');
 const settings = require(m('node/utils/Settings'));
@@ -25,8 +25,8 @@ describe(__filename, function () {
   });
 
   // BEGIN GROUP AND AUTHOR TESTS
-  /../../../../../../../../..//
-  /../../../../../../../../..//
+  // ///////////////////////////////////
+  // ///////////////////////////////////
 
   /* Tests performed
   -> createPad(padID)
