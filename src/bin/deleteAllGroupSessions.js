@@ -18,13 +18,14 @@ const fs = require('fs');
 let deleteCount = 0;
 
 // get the API Key
-const filePath = path.join(__dirname, '../APIKEY.txt');
+const filePath = path.join(__dirname, '../../APIKEY.txt');
 console.log('Deleting all group sessions, please be patient.');
 
 (async () => {
   const settings = require('../tests/container/loadSettings').loadSettings();
   const apikey = fs.readFileSync(filePath, {encoding: 'utf-8'});
   const api = supertest(`http://${settings.ip}:${settings.port}`);
+  let hasDeleted = false;
 
   const apiVersionResponse = await api.get('/api/');
   const apiVersion = apiVersionResponse.body.currentVersion; // 1.12.5
@@ -37,11 +38,16 @@ console.log('Deleting all group sessions, please be patient.');
     const sessionsResponse = await api.get(sessionURI);
     const sessions = sessionsResponse.body.data;
 
-    for (const sessionID of Object.keys(sessions)) {
-      const deleteURI = `/api/${apiVersion}/deleteSession?apikey=${apikey}&sessionID=${sessionID}`;
-      await api.post(deleteURI); // delete
-      deleteCount++;
+    if(!sessions) console.error('Aborting: No sessions found');
+
+    if(sessions) {
+      for (const sessionID of Object.keys(sessions)) {
+        const deleteURI = `/api/${apiVersion}/deleteSession?apikey=${apikey}&sessionID=${sessionID}`;
+        await api.post(deleteURI); // delete
+        deleteCount++;
+        hasDeleted = true;
+      }
     }
   }
-  console.log(`Deleted ${deleteCount} sessions`);
+  if(hasDeleted) console.log(`Deleted ${deleteCount} sessions`);
 })();
